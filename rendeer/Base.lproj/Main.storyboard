@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r" initialMenu="hSq-Gi-Dzz">
+    <device id="mac" appearance="light" renderMode="macOS"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main Menu-->
+        <scene sceneID="VAy-dq-4EI">
+            <objects>
+                <menu isSystemItem="YES" title="Main Menu" identifier="com.apple.menu.root" id="hSq-Gi-Dzz" sceneMemberID="viewController">
+                    <children>
+                        <menu isSystemItem="YES" title="View" identifier="com.apple.menu.view" id="aaQ-D3-Y17">
+                            <children>
+                                <menu title="Presets" id="LKN-mP-fTo">
+                                    <children>
+                                        <command title="1920x1080" id="yYY-yM-qwl">
+                                            <connections>
+                                                <action selector="setPreset1080:" destination="2D2-bA-mYi" id="EjP-0m-QTa"/>
+                                            </connections>
+                                        </command>
+                                        <command title="1280x720" id="xmY-aU-2p0">
+                                            <connections>
+                                                <action selector="setPreset720:" destination="2D2-bA-mYi" id="zR6-6V-xwA"/>
+                                            </connections>
+                                        </command>
+                                    </children>
+                                </menu>
+                            </children>
+                        </menu>
+                        <menu title="Template" anchor="com.apple.menu.view" id="UrD-az-bn4">
+                            <children>
+                                <command title="Item 1" id="7rR-I4-6u7"/>
+                                <command title="Item 2" id="D6Q-7d-Ck2"/>
+                            </children>
+                        </menu>
+                    </children>
+                    <systemMenuChildDeletions>
+                        <menuDeletion anchor="com.apple.menu.file"/>
+                        <menuDeletion anchor="com.apple.menu.edit"/>
+                        <menuDeletion anchor="com.apple.menu.format"/>
+                    </systemMenuChildDeletions>
+                </menu>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2D2-bA-mYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-341" y="-237"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rendeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-Jt-wnu">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7T-dC-oxF" customClass="TitleBarView" customModule="rendeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="pe3-4L-PNI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3Bj-Cx-Hug"/>
+                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9PM-L1-opw"/>
+                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Alh-PY-hIZ"/>
+                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="DhR-0Z-a34"/>
+                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TNJ-HK-ed5"/>
+                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="luM-BD-djC"/>
+                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="uBr-Wj-8fd"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="titleBarView" destination="Q7T-dC-oxF" id="4rh-Fr-sjz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="52"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

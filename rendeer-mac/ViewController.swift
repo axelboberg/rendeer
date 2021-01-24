@@ -1,13 +1,39 @@
 //
 //  ViewController.swift
-//  rendeer
+//  rendeer-mac
 //
-//  Created by Axel Boberg on 2021-01-21.
+//  Created by Axel Boberg on 2021-01-24.
 //
 
-import UIKit
+import Cocoa
 
-class ViewController: UIViewController, AMCPServerDelegate {
+class ViewController: NSViewController, AMCPServerDelegate {
+    var template: TemplateView = TemplateView(width: 1920, height: 1080)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let amcpServer = AMCPServer(5000)
+            amcpServer.delegate = self
+        
+        try? amcpServer.listen()
+        
+        self.view.addSubview(self.template)
+    }
+
+    override var representedObject: Any? {
+        didSet {
+        // Update the view, if already loaded.
+        }
+    }
+    
+    override func viewWillLayout() {
+        let bounds = self.view.bounds
+        self.template.setDisplaySize(width: bounds.width, height: bounds.height)
+        
+        self.view.window?.title = "\(Int(bounds.width))x\(Int(bounds.height))"
+    }
+
     func amcp(didReceiveCommand command: AMCPCommand) {
         let cmd: String = {
             if command.name == "CG" { return command.tokens[2] }
@@ -42,34 +68,5 @@ class ViewController: UIViewController, AMCPServerDelegate {
             return
         }
     }
-    
-    @IBOutlet weak var titleBarView: TitleBarView!
-    
-    var template: TemplateView = TemplateView(width: 1920, height: 1080)
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let amcpServer = AMCPServer(5000)
-            amcpServer.delegate = self
-            amcpServer.listen()
-        
-        self.view.insertSubview(self.template, belowSubview: self.titleBarView)
-        self.template.frame = self.view.frame
-    }
-    
-    @IBAction func setPreset1080 (_ sender: UICommand) {
-        
-    }
-
-    @IBAction func setPreset720 (_ sender: UICommand) {
-
-    }
-    
-    override func viewWillLayoutSubviews() {
-        let bounds = self.view.bounds
-        self.template.setDisplaySize(width: bounds.width, height: bounds.height)
-        
-        self.titleBarView.setTitle("\(Int(bounds.width)) x \(Int(bounds.height))")
-    }
 }
+

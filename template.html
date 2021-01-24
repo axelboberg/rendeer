@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function play () {
+      document.body.innerHTML = "<p>Play</p>" + document.body.innerHTML
+    }
+
+    function stop () {
+      document.body.innerHTML = "<p>Stop</p>" + document.body.innerHTML
+    }
+
+    function update (data) {
+      const obj = JSON.parse(data)
+      document.body.innerHTML = "<p>Update <pre>" + obj + "</pre></p>" + document.body.innerHTML
+    }
+  </script>
+  <style>
+    body {
+      background: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Demo template</h1>
+</body>
+</html>
