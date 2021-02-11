@@ -24,6 +24,11 @@ struct AMCPCommand {
      - returns: An AMCPLayerDescriptor containing the channel and layer
      */
     static func layerDescriptor (from str: String) -> AMCPLayerDescriptor {
+        /*
+         The pattern matches:
+            - Two digits separated by a hyphen (e.g. 1-2 or 54-234)
+            - Single digits
+         */
         let rex = try! NSRegularExpression(pattern: #"(\d+)\-(\d+)|\d+"#, options: .init())
 
         guard let match = rex.firstMatch(
@@ -65,6 +70,11 @@ struct AMCPCommand {
         /*
          Use a regular expression to split the string
          by space while maintaining quoted strings
+         
+         The pattern matches:
+            - Quoted strings with single or double quotes
+            - Words, characters (a-z) or digits separated by a space (that's not between quotes)
+            - Two digits separated by a hyphen (e.g. 1-2 or 43-234), used to extract the channel and layer
          */
         let rex = try! NSRegularExpression(
             pattern: #"(["'])(?:(?=(\\?))\2.)*?\1|(\d+\-\d+)|([A-Za-z\d])+"#,

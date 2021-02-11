@@ -8,11 +8,11 @@
 import Foundation
 import WebKit
 import os
-import UIKit
+import AppKit
 
 typealias TemplateViewExecutionCompletion = (Any?, Error?) -> Void
 
-class TemplateView: UIView, WKNavigationDelegate {
+class TemplateView: NSView, WKNavigationDelegate {
     let logger = Logger()
     var webview: WKWebView?
     
@@ -23,7 +23,7 @@ class TemplateView: UIView, WKNavigationDelegate {
      for rendering an HTML template
      */
     init (width: CGFloat, height: CGFloat) {
-        let frame = CGRect(x: 0, y: 0, width: width, height: height)
+        let frame = NSRect(x: 0, y: 0, width: width, height: height)
         super.init(frame: frame)
         
         let config = WKWebViewConfiguration()
@@ -36,11 +36,13 @@ class TemplateView: UIView, WKNavigationDelegate {
         
         self.webview = WKWebView(frame: frame, configuration: config)
         self.webview?.navigationDelegate = self
+        self.webview?.setValue(false, forKey: "drawsBackground")
         
-        self.layer.anchorPoint = CGPoint(x: 0, y: 0)
+        self.layer = CALayer()
+        self.webview?.layer = CALayer()
         
-        self.webview!.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.webview?.isOpaque = false
+        self.layer?.anchorPoint = CGPoint(x: 0, y: 0)
+        self.webview?.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         self.addSubview(self.webview!)
     }
@@ -52,7 +54,11 @@ class TemplateView: UIView, WKNavigationDelegate {
     func setDisplaySize (width: CGFloat, height: CGFloat) {
         let contentWidth = self.webview!.frame.width
         let contentHeight = self.webview!.frame.height
-        self.layer.transform = CATransform3DMakeScale(width / contentWidth, height / contentHeight, 1)
+        
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(0)
+        self.layer?.transform = CATransform3DMakeScale(width / contentWidth, height / contentHeight, 1)
+        CATransaction.commit()
     }
     
     /**
@@ -128,7 +134,6 @@ class TemplateView: UIView, WKNavigationDelegate {
     
     func update (with data: String, completion: @escaping TemplateViewExecutionCompletion) {
         self.logger.info("[Template] Calling window.update()")
-        print(data)
         self.webview?.evaluateJavaScript("window.update(\(data))", completionHandler: completion)
     }
     

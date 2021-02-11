@@ -1,97 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r" initialMenu="hSq-Gi-Dzz">
-    <device id="mac" appearance="light" renderMode="macOS"/>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Menu-->
-        <scene sceneID="VAy-dq-4EI">
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
             <objects>
-                <menu isSystemItem="YES" title="Main Menu" identifier="com.apple.menu.root" id="hSq-Gi-Dzz" sceneMemberID="viewController">
-                    <children>
-                        <menu isSystemItem="YES" title="View" identifier="com.apple.menu.view" id="aaQ-D3-Y17">
-                            <children>
-                                <menu title="Presets" id="LKN-mP-fTo">
-                                    <children>
-                                        <command title="1920x1080" id="yYY-yM-qwl">
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Rendeer" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Rendeer" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Rendeer" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="setPreset1080:" destination="2D2-bA-mYi" id="EjP-0m-QTa"/>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
-                                        </command>
-                                        <command title="1280x720" id="xmY-aU-2p0">
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Services" id="NMo-om-nkz">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
+                                        <menuItem title="Hide Rendeer" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
-                                                <action selector="setPreset720:" destination="2D2-bA-mYi" id="zR6-6V-xwA"/>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
-                                        </command>
-                                    </children>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit Rendeer" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
                                 </menu>
-                            </children>
-                        </menu>
-                        <menu title="Template" anchor="com.apple.menu.view" id="UrD-az-bn4">
-                            <children>
-                                <command title="Item 1" id="7rR-I4-6u7"/>
-                                <command title="Item 2" id="D6Q-7d-Ck2"/>
-                            </children>
-                        </menu>
-                    </children>
-                    <systemMenuChildDeletions>
-                        <menuDeletion anchor="com.apple.menu.file"/>
-                        <menuDeletion anchor="com.apple.menu.edit"/>
-                        <menuDeletion anchor="com.apple.menu.format"/>
-                    </systemMenuChildDeletions>
-                </menu>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2D2-bA-mYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                            </menuItem>
+                            <menuItem title="View" id="H8h-7b-M4v">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="View" id="HyV-fh-RgO">
+                                    <items>
+                                        <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Customize Toolbar…" id="1UK-8n-QPP">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="runToolbarCustomizationPalette:" target="Ady-hI-5gd" id="pQI-g3-MTW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
+                                        <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Rendeer" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341" y="-237"/>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="128x128" separatorStyle="none" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rendeer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Rendeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" appearanceType="darkAqua" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-Jt-wnu">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dlr-uh-4U0" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="axesIndependently" image="Background" id="wsX-2E-VTZ" userLabel="Checkers"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7T-dC-oxF" customClass="TitleBarView" customModule="rendeer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="pe3-4L-PNI"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3Bj-Cx-Hug"/>
-                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9PM-L1-opw"/>
-                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Alh-PY-hIZ"/>
-                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="DhR-0Z-a34"/>
-                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TNJ-HK-ed5"/>
-                            <constraint firstItem="Q7T-dC-oxF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="luM-BD-djC"/>
-                            <constraint firstItem="dhO-Jt-wnu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="uBr-Wj-8fd"/>
+                            <constraint firstItem="Dlr-uh-4U0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="DOm-ip-FBU"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlr-uh-4U0" secondAttribute="trailing" id="IJQ-T5-XZS"/>
+                            <constraint firstItem="Dlr-uh-4U0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UbS-jB-TiO"/>
+                            <constraint firstAttribute="bottom" secondItem="Dlr-uh-4U0" secondAttribute="bottom" id="sGl-Em-EUU"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <connections>
-                        <outlet property="titleBarView" destination="Q7T-dC-oxF" id="4rh-Fr-sjz"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.75" y="52"/>
+            <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="16" height="16"/>
-        <systemColor name="systemBackgroundColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

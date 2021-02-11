@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0FB00D25BF79B40092FD0D /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0FB00C25BF79B40092FD0D /* CommandParser.swift */; };
+		CA37671E25D5FA9A005E9701 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37FAD625BE195F0090A2FC /* Info.plist */; };
 		CA37FACE25BE195D0090A2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FACD25BE195D0090A2FC /* AppDelegate.swift */; };
 		CA37FAD025BE195D0090A2FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FACF25BE195D0090A2FC /* ViewController.swift */; };
 		CA37FAD525BE195F0090A2FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37FAD325BE195F0090A2FC /* Main.storyboard */; };
@@ -14,44 +16,22 @@
 		CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */; };
 		CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC43AE325BC761400ADE50C /* AMCPCommand.swift */; };
 		CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FB2425BE21280090A2FC /* TemplateView.swift */; };
-		CA6F2E6F25BB282200FB7E9B /* AMCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */; };
-		CA6F2E7425BB283400FB7E9B /* AMCPServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */; };
 		CA9E422525BE246D00547311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3725B8FC4600B75486 /* Assets.xcassets */; };
-		CAC43AE425BC761400ADE50C /* AMCPCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC43AE325BC761400ADE50C /* AMCPCommand.swift */; };
-		CAC5A75B25BB874A00F52E37 /* TitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAC5A75A25BB874A00F52E37 /* TitleBarView.xib */; };
-		CAC5A76025BB87EB00F52E37 /* TitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5A75F25BB87EB00F52E37 /* TitleBarView.swift */; };
-		CACFBB2F25B8FC4400B75486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFBB2E25B8FC4400B75486 /* AppDelegate.swift */; };
-		CACFBB3125B8FC4400B75486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFBB3025B8FC4400B75486 /* SceneDelegate.swift */; };
-		CACFBB3325B8FC4400B75486 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFBB3225B8FC4400B75486 /* ViewController.swift */; };
-		CACFBB3625B8FC4400B75486 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3425B8FC4400B75486 /* Main.storyboard */; };
-		CACFBB3825B8FC4600B75486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3725B8FC4600B75486 /* Assets.xcassets */; };
-		CACFBB3B25B8FC4600B75486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3925B8FC4600B75486 /* LaunchScreen.storyboard */; };
-		CACFBB8025B8FCEB00B75486 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFBB7B25B8FCEB00B75486 /* TemplateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CA37FACB25BE195D0090A2FC /* rendeer-mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rendeer-mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA0FB00C25BF79B40092FD0D /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
+		CA37FACB25BE195D0090A2FC /* Rendeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rendeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA37FACD25BE195D0090A2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA37FACF25BE195D0090A2FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA37FAD425BE195F0090A2FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA37FAD625BE195F0090A2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA37FAD725BE195F0090A2FC /* rendeer_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rendeer_mac.entitlements; sourceTree = "<group>"; };
+		CA37FAD725BE195F0090A2FC /* rendeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rendeer.entitlements; sourceTree = "<group>"; };
 		CA37FB2425BE21280090A2FC /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServer.swift; sourceTree = "<group>"; };
 		CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServerDelegate.swift; sourceTree = "<group>"; };
 		CAC43AE325BC761400ADE50C /* AMCPCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPCommand.swift; sourceTree = "<group>"; };
-		CAC5A75A25BB874A00F52E37 /* TitleBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleBarView.xib; sourceTree = "<group>"; };
-		CAC5A75F25BB87EB00F52E37 /* TitleBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarView.swift; sourceTree = "<group>"; };
-		CACFBB2B25B8FC4400B75486 /* rendeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rendeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CACFBB2E25B8FC4400B75486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CACFBB3025B8FC4400B75486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CACFBB3225B8FC4400B75486 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CACFBB3525B8FC4400B75486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CACFBB3725B8FC4600B75486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CACFBB3A25B8FC4600B75486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CACFBB3C25B8FC4600B75486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CACFBB6125B8FC5100B75486 /* rendeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rendeer.entitlements; sourceTree = "<group>"; };
-		CACFBB7B25B8FCEB00B75486 /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,17 +42,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CACFBB2825B8FC4400B75486 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CA37FACC25BE195D0090A2FC /* rendeer-mac */ = {
+		CA0FB00B25BF79A10092FD0D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA0FB00C25BF79B40092FD0D /* CommandParser.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CA0FB01525BF7A4B0092FD0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA37FACC25BE195D0090A2FC /* rendeer */ = {
 			isa = PBXGroup;
 			children = (
 				CA4B997725BE2C1800208BBB /* Views */,
@@ -81,26 +69,19 @@
 				CA37FACF25BE195D0090A2FC /* ViewController.swift */,
 				CA37FAD325BE195F0090A2FC /* Main.storyboard */,
 				CA37FAD625BE195F0090A2FC /* Info.plist */,
-				CA37FAD725BE195F0090A2FC /* rendeer_mac.entitlements */,
+				CA37FAD725BE195F0090A2FC /* rendeer.entitlements */,
 			);
-			path = "rendeer-mac";
+			path = rendeer;
 			sourceTree = "<group>";
 		};
 		CA37FAFD25BE19730090A2FC /* shared */ = {
 			isa = PBXGroup;
 			children = (
 				CACFBB3725B8FC4600B75486 /* Assets.xcassets */,
+				CA0FB00B25BF79A10092FD0D /* Utils */,
 				CA6F2E6D25BB281200FB7E9B /* AMCP */,
 			);
 			path = shared;
-			sourceTree = "<group>";
-		};
-		CA37FB3225BE21460090A2FC /* WebKit */ = {
-			isa = PBXGroup;
-			children = (
-				CACFBB7B25B8FCEB00B75486 /* TemplateView.swift */,
-			);
-			path = WebKit;
 			sourceTree = "<group>";
 		};
 		CA37FB3925BE21580090A2FC /* WebKit */ = {
@@ -128,56 +109,30 @@
 			path = AMCP;
 			sourceTree = "<group>";
 		};
-		CAC5A75925BB873400F52E37 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CAC5A75A25BB874A00F52E37 /* TitleBarView.xib */,
-				CAC5A75F25BB87EB00F52E37 /* TitleBarView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		CACFBB2225B8FC4400B75486 = {
 			isa = PBXGroup;
 			children = (
 				CA37FAFD25BE19730090A2FC /* shared */,
-				CACFBB2D25B8FC4400B75486 /* rendeer */,
-				CA37FACC25BE195D0090A2FC /* rendeer-mac */,
+				CA37FACC25BE195D0090A2FC /* rendeer */,
 				CACFBB2C25B8FC4400B75486 /* Products */,
+				CA0FB01525BF7A4B0092FD0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		CACFBB2C25B8FC4400B75486 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CACFBB2B25B8FC4400B75486 /* rendeer.app */,
-				CA37FACB25BE195D0090A2FC /* rendeer-mac.app */,
+				CA37FACB25BE195D0090A2FC /* Rendeer.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CACFBB2D25B8FC4400B75486 /* rendeer */ = {
-			isa = PBXGroup;
-			children = (
-				CAC5A75925BB873400F52E37 /* Views */,
-				CA37FB3225BE21460090A2FC /* WebKit */,
-				CACFBB6125B8FC5100B75486 /* rendeer.entitlements */,
-				CACFBB2E25B8FC4400B75486 /* AppDelegate.swift */,
-				CACFBB3025B8FC4400B75486 /* SceneDelegate.swift */,
-				CACFBB3225B8FC4400B75486 /* ViewController.swift */,
-				CACFBB3425B8FC4400B75486 /* Main.storyboard */,
-				CACFBB3925B8FC4600B75486 /* LaunchScreen.storyboard */,
-				CACFBB3C25B8FC4600B75486 /* Info.plist */,
-			);
-			path = rendeer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CA37FACA25BE195D0090A2FC /* rendeer-mac */ = {
+		CA37FACA25BE195D0090A2FC /* Rendeer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA37FAF425BE195F0090A2FC /* Build configuration list for PBXNativeTarget "rendeer-mac" */;
+			buildConfigurationList = CA37FAF425BE195F0090A2FC /* Build configuration list for PBXNativeTarget "Rendeer" */;
 			buildPhases = (
 				CA37FAC725BE195D0090A2FC /* Sources */,
 				CA37FAC825BE195D0090A2FC /* Frameworks */,
@@ -187,26 +142,11 @@
 			);
 			dependencies = (
 			);
-			name = "rendeer-mac";
+			name = Rendeer;
+			packageProductDependencies = (
+			);
 			productName = "rendeer-mac";
-			productReference = CA37FACB25BE195D0090A2FC /* rendeer-mac.app */;
-			productType = "com.apple.product-type.application";
-		};
-		CACFBB2A25B8FC4400B75486 /* rendeer */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CACFBB5525B8FC4600B75486 /* Build configuration list for PBXNativeTarget "rendeer" */;
-			buildPhases = (
-				CACFBB2725B8FC4400B75486 /* Sources */,
-				CACFBB2825B8FC4400B75486 /* Frameworks */,
-				CACFBB2925B8FC4400B75486 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = rendeer;
-			productName = rendeer;
-			productReference = CACFBB2B25B8FC4400B75486 /* rendeer.app */;
+			productReference = CA37FACB25BE195D0090A2FC /* Rendeer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -221,9 +161,6 @@
 					CA37FACA25BE195D0090A2FC = {
 						CreatedOnToolsVersion = 12.3;
 					};
-					CACFBB2A25B8FC4400B75486 = {
-						CreatedOnToolsVersion = 12.3;
-					};
 				};
 			};
 			buildConfigurationList = CACFBB2625B8FC4400B75486 /* Build configuration list for PBXProject "rendeer" */;
@@ -235,12 +172,13 @@
 				Base,
 			);
 			mainGroup = CACFBB2225B8FC4400B75486;
+			packageReferences = (
+			);
 			productRefGroup = CACFBB2C25B8FC4400B75486 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CACFBB2A25B8FC4400B75486 /* rendeer */,
-				CA37FACA25BE195D0090A2FC /* rendeer-mac */,
+				CA37FACA25BE195D0090A2FC /* Rendeer */,
 			);
 		};
 /* End PBXProject section */
@@ -252,17 +190,7 @@
 			files = (
 				CA9E422525BE246D00547311 /* Assets.xcassets in Resources */,
 				CA37FAD525BE195F0090A2FC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CACFBB2925B8FC4400B75486 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CACFBB3B25B8FC4600B75486 /* LaunchScreen.storyboard in Resources */,
-				CACFBB3825B8FC4600B75486 /* Assets.xcassets in Resources */,
-				CACFBB3625B8FC4400B75486 /* Main.storyboard in Resources */,
-				CAC5A75B25BB874A00F52E37 /* TitleBarView.xib in Resources */,
+				CA37671E25D5FA9A005E9701 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,25 +203,11 @@
 			files = (
 				CA37FAD025BE195D0090A2FC /* ViewController.swift in Sources */,
 				CA37FACE25BE195D0090A2FC /* AppDelegate.swift in Sources */,
+				CA0FB00D25BF79B40092FD0D /* CommandParser.swift in Sources */,
 				CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */,
 				CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */,
 				CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */,
 				CA37FB0B25BE1AC80090A2FC /* AMCPServer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CACFBB2725B8FC4400B75486 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CACFBB3325B8FC4400B75486 /* ViewController.swift in Sources */,
-				CA6F2E6F25BB282200FB7E9B /* AMCPServer.swift in Sources */,
-				CACFBB2F25B8FC4400B75486 /* AppDelegate.swift in Sources */,
-				CAC43AE425BC761400ADE50C /* AMCPCommand.swift in Sources */,
-				CACFBB8025B8FCEB00B75486 /* TemplateView.swift in Sources */,
-				CACFBB3125B8FC4400B75486 /* SceneDelegate.swift in Sources */,
-				CA6F2E7425BB283400FB7E9B /* AMCPServerDelegate.swift in Sources */,
-				CAC5A76025BB87EB00F52E37 /* TitleBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,22 +222,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		CACFBB3425B8FC4400B75486 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CACFBB3525B8FC4400B75486 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CACFBB3925B8FC4600B75486 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CACFBB3A25B8FC4600B75486 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -332,19 +230,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "rendeer-mac/rendeer_mac.entitlements";
+				CODE_SIGN_ENTITLEMENTS = rendeer/rendeer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G53A8WSBD2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "rendeer-mac/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/rendeer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.axelboberg.rendeer-mac";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -355,19 +255,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "rendeer-mac/rendeer_mac.entitlements";
+				CODE_SIGN_ENTITLEMENTS = rendeer/rendeer.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G53A8WSBD2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "rendeer-mac/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/rendeer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.axelboberg.rendeer-mac";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -489,56 +391,10 @@
 			};
 			name = Release;
 		};
-		CACFBB5625B8FC4600B75486 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = rendeer/rendeer.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G53A8WSBD2;
-				INFOPLIST_FILE = rendeer/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,6";
-			};
-			name = Debug;
-		};
-		CACFBB5725B8FC4600B75486 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = rendeer/rendeer.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G53A8WSBD2;
-				INFOPLIST_FILE = rendeer/Info.plist;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,6";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CA37FAF425BE195F0090A2FC /* Build configuration list for PBXNativeTarget "rendeer-mac" */ = {
+		CA37FAF425BE195F0090A2FC /* Build configuration list for PBXNativeTarget "Rendeer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA37FAEE25BE195F0090A2FC /* Debug */,
@@ -552,15 +408,6 @@
 			buildConfigurations = (
 				CACFBB5325B8FC4600B75486 /* Debug */,
 				CACFBB5425B8FC4600B75486 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CACFBB5525B8FC4600B75486 /* Build configuration list for PBXNativeTarget "rendeer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CACFBB5625B8FC4600B75486 /* Debug */,
-				CACFBB5725B8FC4600B75486 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
