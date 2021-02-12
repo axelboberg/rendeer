@@ -1,2 +1,7 @@
 # macos
 *.DS_Store
+
+# xcode
+xcuserdata/
+build
+
