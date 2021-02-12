@@ -1,4 +1,4 @@
-![Icon](icon.png)
+<img src="icon.png" width="100" alt="Icon"/>
 
 #  Rendeer
 A template renderer for CasparCG HTML Templates
