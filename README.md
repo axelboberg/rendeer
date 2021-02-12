@@ -1,3 +1,5 @@
+![Icon](icon.png)
+
 #  Rendeer
 A template renderer for CasparCG HTML Templates
 
