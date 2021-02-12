@@ -30,6 +30,7 @@
 		CA37FB2425BE21280090A2FC /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServer.swift; sourceTree = "<group>"; };
 		CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServerDelegate.swift; sourceTree = "<group>"; };
+		CA764E7325D5FC5F00ECCF17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CAC43AE325BC761400ADE50C /* AMCPCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPCommand.swift; sourceTree = "<group>"; };
 		CACFBB3725B8FC4600B75486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +113,7 @@
 		CACFBB2225B8FC4400B75486 = {
 			isa = PBXGroup;
 			children = (
+				CA764E7325D5FC5F00ECCF17 /* README.md */,
 				CA37FAFD25BE19730090A2FC /* shared */,
 				CA37FACC25BE195D0090A2FC /* rendeer */,
 				CACFBB2C25B8FC4400B75486 /* Products */,
