@@ -13,7 +13,7 @@ import AppKit
 typealias TemplateViewExecutionCompletion = (Any?, Error?) -> Void
 
 class TemplateView: NSView, WKNavigationDelegate {
-    let logger = Logger()
+    let logger = RLogger.main
     var webview: WKWebView?
     
     var onLoadCompletion: (() -> Void)?
@@ -67,7 +67,7 @@ class TemplateView: NSView, WKNavigationDelegate {
         - url: A url to load, either local or remote
      */
     func load (url: String) {
-        self.logger.info("[Template] Loading \(url)")
+        self.log("Loading \(url)", isApplication: true)
         if url.hasPrefix("http") {
             let _url = URL(string: url)!
             let request = URLRequest(url: _url)
@@ -76,6 +76,14 @@ class TemplateView: NSView, WKNavigationDelegate {
             let _url = URL(fileURLWithPath: url)
             self.webview!.loadFileURL(_url, allowingReadAccessTo: _url.deletingLastPathComponent())
         }
+    }
+    
+    func log (_ msg: String, isApplication: Bool = false) {
+        self.logger.log(msg, flag: isApplication)
+    }
+    
+    func logError (_ msg: String, isApplication: Bool = false) {
+        self.logger.error(msg, flag: isApplication)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -93,7 +101,7 @@ class TemplateView: NSView, WKNavigationDelegate {
     }
     
     func play (completion: @escaping TemplateViewExecutionCompletion) {
-        self.logger.info("[Template] Calling window.play()")
+        self.log("Calling window.play()", isApplication: true)
         self.webview!.evaluateJavaScript("""
             const fns = [
                 "log",
@@ -120,25 +128,25 @@ class TemplateView: NSView, WKNavigationDelegate {
     }
     
     func stop (completion: @escaping TemplateViewExecutionCompletion) {
-        self.logger.info("[Template] Calling window.stop()")
+        self.log("Calling window.stop()", isApplication: true)
         self.webview!.evaluateJavaScript("window.stop()", completionHandler: completion)
     }
     
     func update (with data: String) {
         self.update(with: data) { (_, err) in
             if err != nil {
-                self.logger.warning("[Template] \(err.debugDescription)")
+                self.log("\(err.debugDescription)")
             }
         }
     }
     
     func update (with data: String, completion: @escaping TemplateViewExecutionCompletion) {
-        self.logger.info("[Template] Calling window.update()")
+        self.log("Calling window.update()", isApplication: true)
         self.webview?.evaluateJavaScript("window.update(\(data))", completionHandler: completion)
     }
     
     func clear () {
-        self.logger.info("[Template] Clearing view")
+        self.log("Clearing webview", isApplication: true)
         self.webview?.loadHTMLString("<html></html>", baseURL: nil)
     }
 }
@@ -146,6 +154,6 @@ class TemplateView: NSView, WKNavigationDelegate {
 extension TemplateView: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard let data = message.body as? [String: Any] else { return }
-        self.logger.debug("[Template] \(data["conc"] as! String)")
+        self.log("\(data["conc"] as! String)")
     }
 }

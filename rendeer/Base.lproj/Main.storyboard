@@ -59,6 +59,13 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
+                                        <menuItem title="Console" id="Shr-dE-YGl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="onOpenConsole:" target="Voe-Tx-rLC" id="7cO-gW-bZn"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="jtT-Vh-UAB"/>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
@@ -144,6 +151,44 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="oUD-z7-LKQ">
+            <objects>
+                <windowController storyboardIdentifier="ConsoleWindowController" showSeguePresentationStyle="single" id="P23-EC-hhV" sceneMemberID="viewController">
+                    <window key="window" title="Console" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" toolbarStyle="unified" id="Adp-cn-LDy">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="268" y="330" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
+                        <view key="contentView" id="icY-Z4-eNH">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="P23-EC-hhV" id="3az-mR-b6r"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="w2L-ak-4xp" kind="relationship" relationship="window.shadowedContentViewController" id="jXB-Vy-d4R"/>
+                    </connections>
+                </windowController>
+                <customObject id="Qhl-2r-wl5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="250"/>
+        </scene>
+        <!--Console-->
+        <scene sceneID="hiS-qx-APC">
+            <objects>
+                <viewController title="Console" id="w2L-ak-4xp" customClass="ConsoleViewController" customModule="Rendeer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4DZ-tT-ITX" customClass="ConsoleView" customModule="Rendeer" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="dXc-hU-IbX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="655"/>
         </scene>
     </scenes>
     <resources>

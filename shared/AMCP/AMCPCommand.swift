@@ -10,6 +10,7 @@ import Foundation
 typealias AMCPLayerDescriptor = (Int, Int)
 
 struct AMCPCommand {
+    let raw: String
     let name: String
     let layer: Int
     let channel: Int
@@ -54,7 +55,7 @@ struct AMCPCommand {
     static func parse (_ str: String) -> AMCPCommand {
         let tokens = tokenize(str)
         let (channel, layer) = AMCPCommand.layerDescriptor(from: str)
-        return AMCPCommand(name: tokens[0], layer: layer, channel: channel, tokens: tokens)
+        return AMCPCommand(raw: str, name: tokens[0], layer: layer, channel: channel, tokens: tokens)
     }
     
     /**

@@ -77,7 +77,6 @@ class AMCPServer {
         conn.receive(minimumIncompleteLength: 1, maximumLength: MTU) { (data, ctx, isComplete, err) in
             if let data = data, !data.isEmpty {
                 guard let message = String(data: data, encoding: .utf8) else { return }
-                self.logger.info("[AMCP] \(message)")
                 
                 let command = AMCPCommand.parse(message)
                 self.delegate?.amcp(didReceiveCommand: command)

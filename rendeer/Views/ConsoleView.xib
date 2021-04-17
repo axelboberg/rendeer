@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ConsoleView" customModule="Rendeer" customModuleProvider="target">
+            <connections>
+                <outlet property="root" destination="c22-O7-iKe" id="FFm-ar-Jth"/>
+                <outlet property="webview" destination="SLJ-OE-mEg" id="dDT-QX-Kdf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLJ-OE-mEg">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="SLJ-OE-mEg" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="7zc-Gq-r5p"/>
+                <constraint firstAttribute="bottom" secondItem="SLJ-OE-mEg" secondAttribute="bottom" id="Df8-BM-lMi"/>
+                <constraint firstAttribute="trailing" secondItem="SLJ-OE-mEg" secondAttribute="trailing" id="Fer-3k-iff"/>
+                <constraint firstItem="SLJ-OE-mEg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="SGF-YS-wGH"/>
+            </constraints>
+            <point key="canvasLocation" x="-135" y="154"/>
+        </customView>
+    </objects>
+</document>

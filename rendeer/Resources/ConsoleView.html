@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function shouldScroll () {
+                const option = document.querySelector('#option-autoscroll')
+                return option.checked
+            }
+            
+            window.addEntry = (timestamp, type, msg, flag) => {
+                const el = document.createElement('div')
+                el.className = `EntryItem EntryItem--${type} ${flag ? 'is-flagged' : ''}`
+                el.innerHTML = `
+                    <div>
+                        <div class="EntryItem-type">${type}</div>
+                    </div>
+                    <div class="EntryItem-message">${msg}</div>
+                `
+                const listEl = document.querySelector('.EntryList')
+                listEl.appendChild(el)
+                
+                if (shouldScroll()) {
+                    const height = document.body.scrollHeight
+                    window.scrollTo(0, height)
+                }
+            }
+        
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('Attaching handlers')
+                
+                const listEl = document.querySelector('.EntryList')
+                const applicationLogsInputEl = document.querySelector('#option-applicationlogs')
+                
+                applicationLogsInputEl.addEventListener('click', e => {
+                    if (e.target.checked) listEl.classList.remove('EntryList--noApplication')
+                    else listEl.classList.add('EntryList--noApplication')
+                })
+            })
+        </script>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+
+                color: white;
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                
+                background: rgba(33, 33, 33, 1);
+            }
+
+            .EntryList {
+                margin: 0;
+                margin-top: 30px;
+                padding: 0;
+                list-style: none;
+            }
+        
+            .EntryItem {
+                display: flex;
+                border-left: 4px solid transparent;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        
+            .EntryItem.is-flagged {
+                border-left: 4px solid rgba(255, 255, 255, 0.5);
+            }
+        
+            .EntryItem > div {
+                margin: 5px;
+            }
+        
+            .EntryItem-message {
+                font-family: monospace;
+            }
+        
+            .EntryItem-type {
+                width: 50px;
+                padding: 0.3em 0.75em;
+                font-size: 0.7em;
+                border-radius: 30px;
+                
+                color: rgb(0, 203, 255);
+                text-align: right;
+            }
+        
+            .EntryItem--error .EntryItem-type {
+                color: rgb(255, 0, 55);
+            }
+        
+            .Options {
+                position: fixed;
+                top: 0;
+                padding: 5px 10px;
+                width: 100%;
+                background: rgba(45, 45, 45, 0.8);
+                font-size: 0.7em;
+                
+                user-select: none;
+                -webkit-user-select: none;
+                
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+            }
+        
+            .Options-option {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        
+            .EntryList--noApplication .EntryItem.is-flagged {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="Options">
+            <span class="Options-option">
+                <label for="option-autoscroll">Autoscroll</label>
+                <input id="option-autoscroll" type="checkbox" checked>
+            </span>
+            <span class="Options-option">
+                <label for="option-applicationlogs">Show application logs</label>
+                <input id="option-applicationlogs" type="checkbox" checked>
+            </span>
+        </div>
+        <li class="EntryList"></li>
+    </body>
+</html>

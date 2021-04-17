@@ -9,7 +9,7 @@ import Cocoa
 
 class ViewController: NSViewController, AMCPServerDelegate {
     var template: TemplateView?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +31,6 @@ class ViewController: NSViewController, AMCPServerDelegate {
         amcpServer.listen()
         
         self.view.addSubview(self.template!)
-        print(commands)
     }
 
     override var representedObject: Any? {
