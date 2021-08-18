@@ -7,8 +7,18 @@
 
 import Cocoa
 
-class ViewController: NSViewController, AMCPServerDelegate {
+class ViewController: NSViewController, AMCPServerDelegate, RenderViewDelegate {
+    func renderView(willDraw: Bool) {
+        print("Will draw")
+        
+        let frame = self.template?.render()
+        self.renderView?.backgroundImage = frame
+        
+        print(frame)
+    }
+    
     var template: TemplateView?
+    var renderView: RenderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +35,22 @@ class ViewController: NSViewController, AMCPServerDelegate {
             self.template?.load(url: url!)
         }
         
+        self.template?.load(url: "https://apple.com")
+        
         let amcpServer = AMCPServer(UInt16(truncating: amcpPort))
             amcpServer.delegate = self
         
         amcpServer.listen()
         
         self.view.addSubview(self.template!)
+        
+        guard let device = MTLCreateSystemDefaultDevice() else { return }
+        self.renderView = RenderView(frame: CGRect(x: 0, y: 0, width: 1920, height: 1080), device: device)
+        self.renderView?.setup()
+        
+        self.renderView?.renderDelegate = self
+
+        self.view.addSubview(self.renderView!)
     }
 
     override var representedObject: Any? {

@@ -9,6 +9,7 @@ import Foundation
 import WebKit
 import os
 import AppKit
+import CoreGraphics
 
 typealias TemplateViewExecutionCompletion = (Any?, Error?) -> Void
 
@@ -148,6 +149,30 @@ class TemplateView: NSView, WKNavigationDelegate {
     func clear () {
         self.log("Clearing webview", isApplication: true)
         self.webview?.loadHTMLString("<html></html>", baseURL: nil)
+    }
+    
+    func render () -> CGImage {
+        let width = Int(self.frame.width)
+        let height = Int(self.frame.height)
+        let imageRepresentation = NSBitmapImageRep(
+            bitmapDataPlanes: nil,
+            pixelsWide: width,
+            pixelsHigh: height,
+            bitsPerSample: 8,
+            samplesPerPixel: 4,
+            hasAlpha: true,
+            isPlanar: false,
+            colorSpaceName: NSColorSpaceName.deviceRGB,
+            bytesPerRow: 0,
+            bitsPerPixel: 0)!
+
+        imageRepresentation.size = self.bounds.size
+
+        let context = NSGraphicsContext(bitmapImageRep: imageRepresentation)!
+
+        self.layer?.render(in: context.cgContext)
+
+        return imageRepresentation.cgImage!
     }
 }
 

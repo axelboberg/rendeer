@@ -20,6 +20,10 @@
 		CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */; };
 		CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC43AE325BC761400ADE50C /* AMCPCommand.swift */; };
 		CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FB2425BE21280090A2FC /* TemplateView.swift */; };
+		CA5AB0D726C43EFE008EA9C4 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5AB0D626C43EFE008EA9C4 /* CameraView.swift */; };
+		CA78FEFA263E11D70082045B /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CA78FEF9263E11D70082045B /* Shaders.metal */; };
+		CA78FEFE263E11FE0082045B /* RenderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA78FEFD263E11FE0082045B /* RenderObject.swift */; };
+		CA78FF01263E122A0082045B /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA78FF00263E122A0082045B /* RenderView.swift */; };
 		CA8ADC07262B0636003AF057 /* ConsoleView.html in Resources */ = {isa = PBXBuildFile; fileRef = CA8ADC06262B0636003AF057 /* ConsoleView.html */; };
 		CA9E422525BE246D00547311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3725B8FC4600B75486 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -37,10 +41,14 @@
 		CA37FAD625BE195F0090A2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA37FAD725BE195F0090A2FC /* rendeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rendeer.entitlements; sourceTree = "<group>"; };
 		CA37FB2425BE21280090A2FC /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		CA5AB0D626C43EFE008EA9C4 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServer.swift; sourceTree = "<group>"; };
 		CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServerDelegate.swift; sourceTree = "<group>"; };
 		CA764E7325D5FC5F00ECCF17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA764E7425D6008200ECCF17 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		CA78FEF9263E11D70082045B /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		CA78FEFD263E11FE0082045B /* RenderObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderObject.swift; sourceTree = "<group>"; };
+		CA78FF00263E122A0082045B /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 		CA8ADC06262B0636003AF057 /* ConsoleView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ConsoleView.html; sourceTree = "<group>"; };
 		CAC43AE325BC761400ADE50C /* AMCPCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPCommand.swift; sourceTree = "<group>"; };
 		CACFBB3725B8FC4600B75486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 		CA37FACC25BE195D0090A2FC /* rendeer */ = {
 			isa = PBXGroup;
 			children = (
+				CA78FEF8263E11C30082045B /* Rendering */,
 				CA8ADC05262B0628003AF057 /* Resources */,
 				CA34A1EF262AEE0E00AAC171 /* Controllers */,
 				CA4B997725BE2C1800208BBB /* Views */,
@@ -112,6 +121,8 @@
 				CA37FB2425BE21280090A2FC /* TemplateView.swift */,
 				CA34A1F3262AEEA800AAC171 /* ConsoleView.swift */,
 				CA34A1FA262AF3A100AAC171 /* ConsoleView.xib */,
+				CA78FF00263E122A0082045B /* RenderView.swift */,
+				CA5AB0D626C43EFE008EA9C4 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,6 +135,15 @@
 				CAC43AE325BC761400ADE50C /* AMCPCommand.swift */,
 			);
 			path = AMCP;
+			sourceTree = "<group>";
+		};
+		CA78FEF8263E11C30082045B /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				CA78FEF9263E11D70082045B /* Shaders.metal */,
+				CA78FEFD263E11FE0082045B /* RenderObject.swift */,
+			);
+			path = Rendering;
 			sourceTree = "<group>";
 		};
 		CA8ADC05262B0628003AF057 /* Resources */ = {
@@ -231,13 +251,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA34A1F1262AEE3900AAC171 /* ConsoleViewController.swift in Sources */,
+				CA5AB0D726C43EFE008EA9C4 /* CameraView.swift in Sources */,
 				CA37FAD025BE195D0090A2FC /* ViewController.swift in Sources */,
 				CA37FACE25BE195D0090A2FC /* AppDelegate.swift in Sources */,
 				CA0FB00D25BF79B40092FD0D /* CommandParser.swift in Sources */,
 				CA34A1F4262AEEA800AAC171 /* ConsoleView.swift in Sources */,
 				CA34A1F7262AEED700AAC171 /* RLogger.swift in Sources */,
+				CA78FF01263E122A0082045B /* RenderView.swift in Sources */,
 				CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */,
 				CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */,
+				CA78FEFE263E11FE0082045B /* RenderObject.swift in Sources */,
+				CA78FEFA263E11D70082045B /* Shaders.metal in Sources */,
 				CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */,
 				CA37FB0B25BE1AC80090A2FC /* AMCPServer.swift in Sources */,
 			);
@@ -274,6 +298,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -299,6 +324,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -139,12 +139,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="axesIndependently" image="Background" id="wsX-2E-VTZ" userLabel="Checkers"/>
                             </imageView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="wea-C1-t3j" customClass="CameraView" customModule="Rendeer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Dlr-uh-4U0" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="DOm-ip-FBU"/>
+                            <constraint firstItem="wea-C1-t3j" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="EUA-z3-7jN"/>
+                            <constraint firstAttribute="trailing" secondItem="wea-C1-t3j" secondAttribute="trailing" id="GhO-tP-3qJ"/>
                             <constraint firstAttribute="trailing" secondItem="Dlr-uh-4U0" secondAttribute="trailing" id="IJQ-T5-XZS"/>
                             <constraint firstItem="Dlr-uh-4U0" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="UbS-jB-TiO"/>
+                            <constraint firstItem="wea-C1-t3j" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Wcp-Dt-z0u"/>
                             <constraint firstAttribute="bottom" secondItem="Dlr-uh-4U0" secondAttribute="bottom" id="sGl-Em-EUU"/>
+                            <constraint firstAttribute="bottom" secondItem="wea-C1-t3j" secondAttribute="bottom" id="sPI-z5-ars"/>
                         </constraints>
                     </view>
                 </viewController>
