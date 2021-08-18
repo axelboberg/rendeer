@@ -119,6 +119,8 @@ class TemplateView: NSView, WKNavigationDelegate {
                     })
                 }
             }
+
+            window.caspar = {}
         """, completionHandler: nil)
         self.webview!.evaluateJavaScript("window.play()", completionHandler: completion)
     }
