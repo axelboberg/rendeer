@@ -40,4 +40,4 @@ open -a Rendeer --args --url https://example.com --width 1280 --height 720 --amc
 
 
 ## License
-MIT
+GPL v3
