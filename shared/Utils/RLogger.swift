@@ -56,6 +56,16 @@ class RLogger {
         self.addEntry(entry)
     }
     
+    /**
+     An alias for log()
+     - parameters:
+        - msg: A message to log
+        - flag: A boolean indicating wether to flag the entry
+     */
+    func info(_ msg: String, flag: Bool = false) {
+        self.log(msg, flag: flag)
+    }
+    
     private func addEntry (_ entry: RLoggerEntry) {
         self.entries.append(entry)
         if self.entries.count > MAX_STORED_ENTRIES_N {

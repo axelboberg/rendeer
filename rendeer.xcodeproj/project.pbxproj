@@ -60,6 +60,7 @@
 		CA0FB00B25BF79A10092FD0D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA34A1F6262AEED700AAC171 /* RLogger.swift */,
 				CA0FB00C25BF79B40092FD0D /* CommandParser.swift */,
 			);
 			path = Utils;
@@ -91,7 +92,6 @@
 				CA37FAD325BE195F0090A2FC /* Main.storyboard */,
 				CA37FAD625BE195F0090A2FC /* Info.plist */,
 				CA37FAD725BE195F0090A2FC /* rendeer.entitlements */,
-				CA34A1F6262AEED700AAC171 /* RLogger.swift */,
 			);
 			path = rendeer;
 			sourceTree = "<group>";

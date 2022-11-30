@@ -18,7 +18,7 @@ class ViewController: NSViewController, AMCPServerDelegate {
         let url = commands["--url"] as? String
         let width = NumberFormatter().number(from: commands["--width"] as? String ?? "") as? CGFloat ?? 1920
         let height = NumberFormatter().number(from: commands["--height"] as? String ?? "") as? CGFloat ?? 1080
-        let amcpPort = NumberFormatter().number(from: commands["--amcp-port"] as? String ?? "") ?? 5000
+        let amcpPort = NumberFormatter().number(from: commands["--amcp-port"] as? String ?? "") ?? 5250
         
         self.template = TemplateView(width: CGFloat(width), height: CGFloat(height))
         if url != nil {
@@ -52,8 +52,11 @@ class ViewController: NSViewController, AMCPServerDelegate {
             return command.name
         }()
         
+        print(cmd)
+        
         switch cmd {
         case "ADD":
+            print("Adding")
             self.template?.clear()
             self.template?.load(url: command.tokens[4].replacingOccurrences(of: "\"", with: "")) {
                 self.template?.update(with: command.tokens.last ?? "")

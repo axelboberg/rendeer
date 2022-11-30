@@ -36,7 +36,7 @@ open -a Rendeer --args --url https://example.com --width 1280 --height 720 --amc
 | `url` | The initial url to open | *none* |
 | `width` | The renderer-width of the viewport, this does not affect the size of the actual window | `1920` |
 | `height` | The renderer-height of the viewport, this does not affect the size of the actual window | `1080` |
-| `amcp-port` | A port number on which to listen for AMCP | `5000` |
+| `amcp-port` | A port number on which to listen for AMCP | `5250` |
 
 
 ## License

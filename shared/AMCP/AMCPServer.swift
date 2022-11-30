@@ -7,6 +7,7 @@
 
 import Network
 import os
+import WebKit
 
 @available(iOS 12.0, *)
 @available(OSX 10.14, *)
@@ -21,7 +22,7 @@ typealias AMCPConnection = NWConnection
 let MTU = 65535
 
 class AMCPServer {
-    private let logger = Logger()
+    private let logger = RLogger.main
     
     private var listener: NWListener
     private let port: NWEndpoint.Port
@@ -40,6 +41,9 @@ class AMCPServer {
      */
     init(_ port: UInt16) {
         self.port = NWEndpoint.Port(rawValue: port)!
+        
+        let params = NWParameters.tcp
+        params.allowLocalEndpointReuse = true
         self.listener = try! NWListener(using: .tcp, on: self.port)
     }
     
@@ -52,14 +56,31 @@ class AMCPServer {
         self.listener.start(queue: .main)
     }
     
+    /**
+     Cancel the listener and
+     all current connections
+     */
+    func cancel () {
+        self.listener.cancel()
+    }
+    
     private func onConnection (_ conn: NWConnection) {
         self.recieve(conn)
         conn.start(queue: .main)
     }
-    
+
     private func onStateChange (to state: NWListener.State) {
-        if state == .ready {
-            self.logger.info("[AMCP] Listening on port \(self.port.rawValue)")
+        switch (state) {
+        case .ready:
+            self.logger.info("[AMCP] Listening on port \(self.port.rawValue)", flag: true)
+            break
+        case .failed(_):
+            self.logger.info("[AMCP] Server failed, restarting...", flag: true)
+            self.cancel()
+            self.listen()
+            break
+        default:
+            break
         }
     }
     
@@ -77,8 +98,8 @@ class AMCPServer {
         conn.receive(minimumIncompleteLength: 1, maximumLength: MTU) { (data, ctx, isComplete, err) in
             if let data = data, !data.isEmpty {
                 guard let message = String(data: data, encoding: .utf8) else { return }
-                
-                let command = AMCPCommand.parse(message)
+                guard let command = AMCPCommand.parse(message) else { return }
+
                 self.delegate?.amcp(didReceiveCommand: command)
                 
                 let res = "200 \(command.name) OK"
@@ -90,6 +111,6 @@ class AMCPServer {
     }
     
     deinit {
-        self.listener.cancel()
+        self.cancel()
     }
 }

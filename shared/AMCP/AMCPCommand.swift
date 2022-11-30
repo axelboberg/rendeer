@@ -52,9 +52,14 @@ struct AMCPCommand {
         - str: A string to parse
      - returns: An AMCP command
      */
-    static func parse (_ str: String) -> AMCPCommand {
+    static func parse (_ str: String) -> AMCPCommand? {
         let tokens = tokenize(str)
         let (channel, layer) = AMCPCommand.layerDescriptor(from: str)
+        
+        if tokens.isEmpty {
+            return nil
+        }
+        
         return AMCPCommand(raw: str, name: tokens[0], layer: layer, channel: channel, tokens: tokens)
     }
     

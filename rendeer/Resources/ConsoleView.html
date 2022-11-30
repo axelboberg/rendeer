@@ -26,8 +26,6 @@
             }
         
             document.addEventListener('DOMContentLoaded', () => {
-                console.log('Attaching handlers')
-                
                 const listEl = document.querySelector('.EntryList')
                 const applicationLogsInputEl = document.querySelector('#option-applicationlogs')
                 
@@ -81,6 +79,9 @@
                 
                 color: rgb(0, 203, 255);
                 text-align: right;
+                
+                -webkit-user-select: none;
+                user-select: none;
             }
         
             .EntryItem--error .EntryItem-type {
