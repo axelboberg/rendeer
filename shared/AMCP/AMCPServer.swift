@@ -61,6 +61,7 @@ class AMCPServer {
      all current connections
      */
     func cancel () {
+        self.logger.info("[AMCP] Cancelling server")
         self.listener.cancel()
     }
     
@@ -74,8 +75,8 @@ class AMCPServer {
         case .ready:
             self.logger.info("[AMCP] Listening on port \(self.port.rawValue)", flag: true)
             break
-        case .failed(_):
-            self.logger.info("[AMCP] Server failed, restarting...", flag: true)
+        case .cancelled, .failed(_):
+            self.logger.info("[AMCP] Server stopped, restarting...", flag: true)
             self.cancel()
             self.listen()
             break
