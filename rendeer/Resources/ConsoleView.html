@@ -7,12 +7,13 @@
                 return option.checked
             }
             
-            window.addEntry = (timestamp, type, msg, flag) => {
+            window.addEntry = (timestamp, type, msg, flag, channel) => {
                 const el = document.createElement('div')
                 el.className = `EntryItem EntryItem--${type} ${flag ? 'is-flagged' : ''}`
                 el.innerHTML = `
                     <div>
                         <div class="EntryItem-type">${type}</div>
+                        <div class="EntryItem-channel">${channel || ''}</div>
                     </div>
                     <div class="EntryItem-message">${msg}</div>
                 `
@@ -71,7 +72,8 @@
                 font-family: monospace;
             }
         
-            .EntryItem-type {
+            .EntryItem-type,
+            .EntryItem-channel {
                 width: 50px;
                 padding: 0.3em 0.75em;
                 font-size: 0.7em;

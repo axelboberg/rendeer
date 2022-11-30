@@ -14,12 +14,13 @@
 		CA34A1FB262AF3A100AAC171 /* ConsoleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA34A1FA262AF3A100AAC171 /* ConsoleView.xib */; };
 		CA37671E25D5FA9A005E9701 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA37FAD625BE195F0090A2FC /* Info.plist */; };
 		CA37FACE25BE195D0090A2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FACD25BE195D0090A2FC /* AppDelegate.swift */; };
-		CA37FAD025BE195D0090A2FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FACF25BE195D0090A2FC /* ViewController.swift */; };
+		CA37FAD025BE195D0090A2FC /* RendererViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FACF25BE195D0090A2FC /* RendererViewController.swift */; };
 		CA37FAD525BE195F0090A2FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA37FAD325BE195F0090A2FC /* Main.storyboard */; };
 		CA37FB0B25BE1AC80090A2FC /* AMCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */; };
 		CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */; };
 		CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC43AE325BC761400ADE50C /* AMCPCommand.swift */; };
 		CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA37FB2425BE21280090A2FC /* TemplateView.swift */; };
+		CA39CDC5293733A800D36260 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA39CDC4293733A800D36260 /* ApplicationState.swift */; };
 		CA8ADC07262B0636003AF057 /* ConsoleView.html in Resources */ = {isa = PBXBuildFile; fileRef = CA8ADC06262B0636003AF057 /* ConsoleView.html */; };
 		CA9E422525BE246D00547311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACFBB3725B8FC4600B75486 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -32,11 +33,12 @@
 		CA34A1FA262AF3A100AAC171 /* ConsoleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsoleView.xib; sourceTree = "<group>"; };
 		CA37FACB25BE195D0090A2FC /* Rendeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rendeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA37FACD25BE195D0090A2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA37FACF25BE195D0090A2FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA37FACF25BE195D0090A2FC /* RendererViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RendererViewController.swift; sourceTree = "<group>"; };
 		CA37FAD425BE195F0090A2FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA37FAD625BE195F0090A2FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA37FAD725BE195F0090A2FC /* rendeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rendeer.entitlements; sourceTree = "<group>"; };
 		CA37FB2425BE21280090A2FC /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		CA39CDC4293733A800D36260 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		CA6F2E6E25BB282200FB7E9B /* AMCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServer.swift; sourceTree = "<group>"; };
 		CA6F2E7325BB283400FB7E9B /* AMCPServerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMCPServerDelegate.swift; sourceTree = "<group>"; };
 		CA764E7325D5FC5F00ECCF17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		CA34A1EF262AEE0E00AAC171 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CA37FACF25BE195D0090A2FC /* ViewController.swift */,
+				CA37FACF25BE195D0090A2FC /* RendererViewController.swift */,
 				CA34A1F0262AEE3900AAC171 /* ConsoleViewController.swift */,
 			);
 			path = Controllers;
@@ -85,6 +87,7 @@
 		CA37FACC25BE195D0090A2FC /* rendeer */ = {
 			isa = PBXGroup;
 			children = (
+				CA39CDC32937339B00D36260 /* Models */,
 				CA8ADC05262B0628003AF057 /* Resources */,
 				CA34A1EF262AEE0E00AAC171 /* Controllers */,
 				CA4B997725BE2C1800208BBB /* Views */,
@@ -104,6 +107,14 @@
 				CA6F2E6D25BB281200FB7E9B /* AMCP */,
 			);
 			path = shared;
+			sourceTree = "<group>";
+		};
+		CA39CDC32937339B00D36260 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA39CDC4293733A800D36260 /* ApplicationState.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CA4B997725BE2C1800208BBB /* Views */ = {
@@ -231,11 +242,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA34A1F1262AEE3900AAC171 /* ConsoleViewController.swift in Sources */,
-				CA37FAD025BE195D0090A2FC /* ViewController.swift in Sources */,
+				CA37FAD025BE195D0090A2FC /* RendererViewController.swift in Sources */,
 				CA37FACE25BE195D0090A2FC /* AppDelegate.swift in Sources */,
 				CA0FB00D25BF79B40092FD0D /* CommandParser.swift in Sources */,
 				CA34A1F4262AEEA800AAC171 /* ConsoleView.swift in Sources */,
 				CA34A1F7262AEED700AAC171 /* RLogger.swift in Sources */,
+				CA39CDC5293733A800D36260 /* ApplicationState.swift in Sources */,
 				CA37FB0C25BE1AC80090A2FC /* AMCPServerDelegate.swift in Sources */,
 				CA37FB2525BE21280090A2FC /* TemplateView.swift in Sources */,
 				CA37FB0D25BE1AC80090A2FC /* AMCPCommand.swift in Sources */,
@@ -274,7 +286,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -300,7 +312,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.axelboberg.rendeer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
