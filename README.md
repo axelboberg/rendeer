@@ -11,6 +11,10 @@ A template renderer for CasparCG HTML Templates
 
 ## Usage
 
+### Channels 
+Each new window represents its own channel, this allows for running multiple renderers simultaneously.
+Simply open a new window to create a new channel.
+
 ### AMCP
 This app implements parts of the AMCP protocol from CasparCG.  
 See the full documentation [here](https://github.com/CasparCG/help/wiki/AMCP-Protocol).
@@ -37,7 +41,6 @@ open -a Rendeer --args --url https://example.com --width 1280 --height 720 --amc
 | `width` | The renderer-width of the viewport, this does not affect the size of the actual window | `1920` |
 | `height` | The renderer-height of the viewport, this does not affect the size of the actual window | `1080` |
 | `amcp-port` | A port number on which to listen for AMCP | `5250` |
-
 
 ## License
 GPL v3
