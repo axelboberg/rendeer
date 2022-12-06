@@ -32,7 +32,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
     }
     
     /*
-     Close the currently active window, no matter if it is a renderer or a console
+     Close the currently active window,
+     no matter if it is a renderer or a console
      */
     @IBAction func onCloseWindow(_ sender: Any) {
         for controller in self.renderWindowControllers {
@@ -58,6 +59,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
         }
     }
     
+    /**
+     Calculate a new channel number,
+     used for referencing newly opened channels
+     - returns: An integer representing a new channel
+     */
     private func getFirstEmptyChannel () -> Int {
         var channel = 0
         for window in self.renderWindowControllers {
@@ -68,6 +74,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
         return channel + 1
     }
     
+    /**
+     Open a new renderer window
+     */
     private func openNewRenderer () {
         let channel = self.getFirstEmptyChannel()
         
@@ -85,7 +94,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
         self.logger.log("Initialized")
     }
     
-    private func parseArguments () {
+    /**
+     Parse the runtime arguments
+     as a new application state
+     */
+    private func parseArgumentsAsState () {
         let commands = CommandParser.parse()
         
         let url = commands["--url"] as? String
@@ -97,20 +110,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.parseArguments()
+        self.parseArgumentsAsState()
         
+        /*
+         Setup a new AMCP server
+         to listen on startup,
+         the same server is used for
+         all renderer windows
+         */
         let amcpServer = AMCPServer(UInt16(truncating: self.state.amcpPort))
             amcpServer.delegate = self
         
         amcpServer.listen()
-
         self.openNewRenderer()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
+    func applicationWillTerminate(_ aNotification: Notification) {}
     
+    /**
+     Get a window by its channel number
+     - returns: The window controller rendering the channel number
+     */
     func getWindowForChannel (_ channel: Int) -> NSWindowController? {
         for window in self.renderWindowControllers {
             if window.0 == channel {
@@ -120,6 +140,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, AMCPServerDelegate {
         return nil
     }
     
+    /**
+     Handle AMCP commands and forward
+     them to the correct renderer window
+     */
     func amcp(didReceiveCommand command: AMCPCommand) {
         let cmd: String = {
             if command.name == "CG" { return command.tokens[2] }
