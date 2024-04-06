@@ -38,6 +38,10 @@ class TemplateView: NSView, WKNavigationDelegate {
         self.webview?.navigationDelegate = self
         self.webview?.setValue(false, forKey: "drawsBackground")
         
+        if #available(macOS 13.3, *) {
+            self.webview?.isInspectable = true
+        }
+        
         self.layer = CALayer()
         self.webview?.layer = CALayer()
         
